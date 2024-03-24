@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golf Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <audio id="hit" src="/sounds/applause.mp3"></audio
+    ><!--https://youtu.be/gpQCbfXjgBs?si=Giv1ShvmcGvhGjTV-->
+    <audio id="miss" src="/sounds/boo.mp3"></audio>
+    <!--https://www.youtube.com/watch?v=6Bnn7FoVUwQ-->
+    <div class="container">
+      <h2>Score:</h2>
+      <!-- Score display -->
+      <div class="score-info">
+        <p>Hits: <span id="hits">0</span></p>
+        <p>Misses: <span id="misses">0</span></p>
+      </div>
+      <div id="hitResult"></div>
+      <div class="background"></div>
+      <div class="club"></div>
+      <div class="ball"></div>
+      <div class="selector"><div class="needle"></div></div>
+      <div class="line"></div>
+      <div class="player"></div>
+      <button class="swing-button" onclick="swing()">Swing</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,171 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/Background_00000.png");
+  background-size: cover;
+}
+
+/* Animatie voor de swingende club */
+@keyframes swingAnimation {
+  0% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+
+.ball {
+  position: absolute;
+  bottom: 0;
+  left: 700px;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-image: url("images/bal_00000.png");
+  background-size: cover;
+}
+
+.selector {
+  position: absolute;
+  bottom: 100px;
+  left: 75%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 50px;
+  background: linear-gradient(to right, red 0%, orange 50%, green 100%);
+  border-radius: 50px;
+}
+
+/* Voeg animatie toe voor de bewegende naald */
+@keyframes needleAnimation {
+  0% {
+    left: 5%;
+  }
+  100% {
+    left: 95%;
+  }
+}
+
+.needle {
+  position: absolute;
+  width: 15px;
+  height: 50px;
+  background-color: black;
+  animation: needleAnimation 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) infinite
+    alternate; /* Start de animatie voor de naald */
+}
+
+.needlePlay {
+  animation-play-state: running;
+}
+
+.needlePause {
+  animation-play-state: paused;
+}
+
+.club {
+  position: absolute;
+  top: 69%;
+  left: 503px;
+  width: 250px;
+  height: 250px;
+  background-image: url("images/club.png");
+  background-size: cover;
+  z-index: 2;
+  transform-origin: 10px 10px;
+}
+
+/* Animatie voor de swingende club */
+.swinging {
+  animation: swingAnimation 1s ease;
+}
+
+.swing-button {
+  position: absolute;
+  bottom: 150px;
+  left: 75%;
+  width: 140px;
+  height: 75px;
+  transform: translateX(-50%);
+  background: rgb(209, 209, 209);
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.swing-button:focus {
+  outline: none;
+}
+
+.player {
+  position: absolute;
+  bottom: 0;
+  left: 200px;
+  width: 500px;
+  height: 500px;
+  background-image: url("images/mannetje_00000.png");
+  background-size: cover;
+  z-index: 2;
+}
+
+/* Stijl voor het scorekopje */
+h2 {
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+
+/* Stijl voor de score-informatie */
+.score-info {
+  color: white;
+  font-size: 18px;
+}
+
+/* Stijl voor de hits en misses */
+#hits,
+#misses {
+  font-weight: bold;
+}
+
+#hitResult {
+  font-size: xxx-large;
+  z-index: 2;
+  top: 50px;
+  left: 50%;
+  position: absolute;
+}
+
+.hit {
+  color: greenyellow;
+}
+.miss {
+  color: red;
+}
